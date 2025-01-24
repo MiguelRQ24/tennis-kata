@@ -12,7 +12,7 @@ class TennisGame1:
             self.player2_points += 1
 
     def score(self):
-
+        POINTS_NAMES = {0: "Love", 1: "Fifteen", 2: "Thirty", 3: "Forty"}
         if self.player1_points == self.player2_points:
             return {0: "Love-All", 1: "Fifteen-All", 2: "Thirty-All"}.get(self.player1_points, "Deuce")
         
@@ -21,5 +21,5 @@ class TennisGame1:
             return {1: "Advantage player1", -1: "Advantage player2"}.get(diferential_ponits, "Win for player1" if diferential_ponits > 0 else "Win for player2")
         
         else:
-            return {0: "Love", 1: "Fifteen", 2: "Thirty", 3: "Forty"}[self.player1_points] + '-' + {0: "Love", 1: "Fifteen", 2: "Thirty", 3: "Forty"}[self.player2_points]
+            return POINTS_NAMES[self.player1_points] + '-' + POINTS_NAMES[self.player2_points]
         
