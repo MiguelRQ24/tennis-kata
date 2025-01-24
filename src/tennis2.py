@@ -16,10 +16,13 @@ class TennisGame2:
         
         if abs(self.player1_points - self.player2_points) > 1 and max(self.player1_points, self.player2_points) > 3:
             return "Win for " + (self.player1_name if self.player1_points > self.player2_points else self.player2_name)
+        
         elif abs(self.player1_points - self.player2_points) == 1 and max(self.player1_points, self.player2_points) > 3:
             return "Advantage " + (self.player1_name if self.player1_points > self.player2_points else self.player2_name)
+        
         elif self.player1_points == self.player2_points and self.player1_points > 2:
             return "Deuce"
+        
         else:
             players_points = []
             for player_points in [self.player1_points, self.player2_points]:
